@@ -1,0 +1,125 @@
+{
+"banner" : [
+{
+"banner_id":"1",
+"image" : "https://i.ibb.co/QjD0NsS8/temp-banner-01.png","banner_title" : "Be Fit",
+"banner_sub_title" : "Relax and rejuvenate with the traditional thai"
+},
+{
+"banner_id":"2",
+"image" : "https://i.ibb.co/QjD0NsS8/temp-banner-01.png",
+"banner_title" : "Royal Peace Spa",
+"banner_sub_title" : "Relax and rejuvenate with the traditional thai"
+},
+{
+"banner_id":"3",
+"image" : "https://i.ibb.co/QjD0NsS8/temp-banner-01.png",
+"banner_title" : "Peace-Relax",
+"banner_sub_title" : "Relax and rejuvenate with the traditional thai"
+}
+],
+"categories" : [
+{
+"category_id":"1",
+"image" : "https://i.ibb.co/6cS8MnKR/temp-category.png",
+"category_name" : "Fitness"
+},
+{
+"category_id":"2",
+"image" : "https://i.ibb.co/6cS8MnKR/temp-category.png",
+"category_name" : "Spa & Beauty"
+},
+{
+"category_id":"3",
+"image" : "https://i.ibb.co/6cS8MnKR/temp-category.png",
+"category_name" : "Hair Cut"
+},
+{
+"category_id":"4",
+"image" : "https://i.ibb.co/6cS8MnKR/temp-category.png",
+"category_name" : "Spa & Relaxation"
+}
+],
+"top_class" : [
+{
+"id":"1",
+"image" : "https://static.vecteezy.com/system/resources/previews/029/775/086/large_2x/within-gym-with-modern-fitness-equipment-for-fitness-events-and-more-modern-of-gym-interior-with-equipment-sports-equipment-in-the-gym-created-with-generative-ai-photo.jpg",
+"is_favourite" : false,
+"title" : "Weight Lift",
+"sub_title" : "Lady Fit",
+"address" : "Prahladnagar, Ahmedabad",
+"distance" : "1",
+"rating" : 2
+},
+{
+"id":"2",
+"image" : "https://static.vecteezy.com/system/resources/previews/029/775/086/large_2x/within-gym-with-modern-fitness-equipment-for-fitness-events-and-more-modern-of-gym-interior-with-equipment-sports-equipment-in-the-gym-created-with-generative-ai-photo.jpg",
+"is_favourite" : false,
+"title" : "Dance",
+"sub_title" : "Lady Dance",
+"address" : "Setellite, Ahmedabad",
+"distance" : "5",
+"rating" : 5
+},
+{
+"id":"3",
+"image" : "https://static.vecteezy.com/system/resources/previews/029/775/086/large_2x/within-gym-with-modern-fitness-equipment-for-fitness-events-and-more-modern-of-gym-interior-with-equipment-sports-equipment-in-the-gym-created-with-generative-ai-photo.jpg",
+"is_favourite" : false,
+"title" : "Relax & Fit",
+"sub_title" : "Relax and rejuvenate with the traditional thai",
+"address" : "CTM, Ahmedabad",
+"distance" : "15",
+"rating" : 0
+},
+{
+"id":"4",
+"image" : "https://static.vecteezy.com/system/resources/previews/029/775/086/large_2x/within-gym-with-modern-fitness-equipment-for-fitness-events-and-more-modern-of-gym-interior-with-equipment-sports-equipment-in-the-gym-created-with-generative-ai-photo.jpg",
+"is_favourite" : false,
+"title" : "traditional Dance",
+"sub_title" : "traditional Lady Dance",
+"address" : "Gota, Ahmedabad",
+"distance" : "2",
+"rating" : 1
+},
+{
+"id":"5",
+"image" : "https://static.vecteezy.com/system/resources/previews/029/775/086/large_2x/within-gym-with-modern-fitness-equipment-for-fitness-events-and-more-modern-of-gym-interior-with-equipment-sports-equipment-in-the-gym-created-with-generative-ai-photo.jpg",
+"is_favourite" : false,
+"title" : "Weight Lift",
+"sub_title" : "Lady Fit",
+"address" : "Prahladnagar, Ahmedabad",
+"distance" : "1",
+"rating" : 2
+},
+{
+"id":"6",
+"image" : "https://static.vecteezy.com/system/resources/previews/029/775/086/large_2x/within-gym-with-modern-fitness-equipment-for-fitness-events-and-more-modern-of-gym-interior-with-equipment-sports-equipment-in-the-gym-created-with-generative-ai-photo.jpg",
+"is_favourite" : false,
+"title" : "Dance",
+"sub_title" : "Lady Dance",
+"address" : "Setellite, Ahmedabad",
+"distance" : "5",
+"rating" : 5
+},
+{
+"id":"7",
+"image" : "https://static.vecteezy.com/system/resources/previews/029/775/086/large_2x/within-gym-with-modern-fitness-equipment-for-fitness-events-and-more-modern-of-gym-interior-with-equipment-sports-equipment-in-the-gym-created-with-generative-ai-photo.jpg",
+"is_favourite" : false,
+"title" : "Relax & Fit",
+"sub_title" : "Relax and rejuvenate with the traditional thai",
+"address" : "CTM, Ahmedabad",
+"distance" : "15",
+"rating" : 0
+},
+{
+"id":"8",
+"image" : "https://static.vecteezy.com/system/resources/previews/029/775/086/large_2x/within-gym-with-modern-fitness-equipment-for-fitness-events-and-more-modern-of-gym-interior-with-equipment-sports-equipment-in-the-gym-created-with-generative-ai-photo.jpg",
+"is_favourite" : false,
+"title" : "traditional Dance",
+"sub_title" : "traditional Lady Dance",
+"address" : "Gota, Ahmedabad",
+"distance" : "2",
+"rating" : 1
+}
+]
+}
