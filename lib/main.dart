@@ -1,3 +1,4 @@
+import 'package:actiday/ui/Splash/splash.dart';
 import 'package:actiday/ui/base/base.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: BaseScreen(),
+      home: SplashScreen(),
     );
   }
 }

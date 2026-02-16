@@ -26,3 +26,4 @@ String ic_searchIcon="assets/svg/ic_search.svg";
 String ic_appbarComponent="assets/images/ic_appbar_component.png";
 String ic_notification="assets/svg/ic_notification.svg";
 String ic_ratingStar="assets/svg/ic_star.svg";
+String imgSplash="assets/svg/ic_splash.svg";

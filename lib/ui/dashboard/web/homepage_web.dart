@@ -1,3 +1,4 @@
+import 'package:actiday/framework/controller/favourite_controller/favourite_controller.dart';
 import 'package:actiday/ui/util/app_constants.dart';
 import 'package:actiday/ui/util/custom_text.dart';
 import 'package:actiday/ui/util/top_class_card.dart';
@@ -18,7 +19,11 @@ class _HomepageWebState extends State<HomepageWeb> {
   @override
   void initState() {
     super.initState();
-    loadHomeJson();
+    loadHomeJson().then((_){
+      if(mounted)setState(() {
+
+      });
+    });
   }
 
   @override
@@ -164,6 +169,7 @@ class _HomepageWebState extends State<HomepageWeb> {
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return TopClassCard(
+                    index: index,
                     image: modelTopClass[index].image ?? '',
                     title: modelTopClass[index].title ?? '',
                     rating: modelTopClass[index].rating?.toDouble() ?? 0.0,

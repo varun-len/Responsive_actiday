@@ -1,3 +1,4 @@
+import 'package:actiday/framework/controller/favourite_controller/favourite_controller.dart';
 import 'package:actiday/framework/controller/home_page_controlller/home_page_conroller.dart';
 import 'package:actiday/ui/util/Themes/app_colors.dart';
 import 'package:actiday/ui/util/top_class_card.dart';
@@ -21,7 +22,11 @@ class _HomepageMobileState extends State<HomepageMobile> {
   @override
   void initState() {
     super.initState();
-    loadHomeJson();
+    loadHomeJson().then((_){
+      if(mounted)setState(() {
+
+      });
+    });
   }
 
   @override
@@ -163,10 +168,13 @@ class _HomepageMobileState extends State<HomepageMobile> {
                 },
                 itemBuilder: (context, index) {
                   return TopClassCard(image: modelTopClass[index].image ?? '',
+                      index: index,
                       title: modelTopClass[index].title ?? '',
                       rating: modelTopClass[index].rating?.toDouble() ?? 0.0,
                       subTitle: modelTopClass[index].subTitle ?? '',
-                      address: modelTopClass[index].address ?? '');
+                      address: modelTopClass[index].address ?? '',
+
+                  );
                 }),
           ),
         ],

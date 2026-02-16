@@ -1,4 +1,5 @@
 
+import 'package:actiday/ui/profile/profile_web.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -56,10 +57,15 @@ class _BaseWebState extends State<BaseWeb> {
             SizedBox(
               width: 10,
             ),
-            SizedBox(
-              height: 20,
-              width: 20,
-              child: Image.asset(ic_appbarComponent),
+            InkWell(
+              onTap: (){
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>ProfileScreen()));
+              },
+              child: SizedBox(
+                height: 20,
+                width: 20,
+                child: Image.asset(ic_appbarComponent),
+              ),
             ),
             SizedBox(
               width: 60,
