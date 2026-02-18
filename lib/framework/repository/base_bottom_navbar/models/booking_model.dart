@@ -35,6 +35,7 @@ class Past {
   List<String>? subTitle;
   String? date;
   int? credit;
+  String? status;
 
   Past({
     this.id,
@@ -43,6 +44,7 @@ class Past {
     this.subTitle,
     this.date,
     this.credit,
+    this.status,
   });
 
   factory Past.fromJson(Map<String, dynamic> json) => Past(
@@ -52,6 +54,7 @@ class Past {
     subTitle: json["sub_title"] == null ? [] : List<String>.from(json["sub_title"]!.map((x) => x)),
     date: json["date"],
     credit: json["credit"],
+    status: json["status"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -61,5 +64,6 @@ class Past {
     "sub_title": subTitle == null ? [] : List<dynamic>.from(subTitle!.map((x) => x)),
     "date": date,
     "credit": credit,
+    "status": status,
   };
 }

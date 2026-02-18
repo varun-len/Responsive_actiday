@@ -3,6 +3,7 @@ import 'package:actiday/framework/controller/home_page_controlller/home_page_con
 import 'package:actiday/ui/util/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'Themes/app_colors.dart';
 import 'custom_text.dart'; // assuming you already created CustomText
 
 class TopClassCard extends StatefulWidget {
@@ -120,7 +121,7 @@ class _TopClassCardState extends State<TopClassCard> {
                 const Spacer(),
                 CustomText(
                   text: widget.rating.toString(),
-                  color: Colors.black45,
+                  color: clrBlack45,
                 ),
                 const SizedBox(width: 5),
                 SvgPicture.asset(ic_ratingStar),
@@ -133,7 +134,7 @@ class _TopClassCardState extends State<TopClassCard> {
             padding: const EdgeInsets.symmetric(horizontal: 18),
             child: CustomText(
               text: widget.subTitle,
-              color: Colors.black45,
+              color: clrBlack45,
               fontSize: width > height ? width * 0.011 : width * 0.039,
             ),
           ),
@@ -142,7 +143,7 @@ class _TopClassCardState extends State<TopClassCard> {
             padding: const EdgeInsets.symmetric(horizontal: 18),
             child: CustomText(
               text: widget.address,
-              color: Colors.black45,
+              color: clrBlack45,
               fontSize: width > height ? width * 0.011 : width * 0.039,
             ),
           ),

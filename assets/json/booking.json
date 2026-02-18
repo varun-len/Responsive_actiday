@@ -2,53 +2,59 @@
   "upcoming" : [
     {
       "id":"1",
-      "image" : "https://img.freepik.com/free-photo/closeup-shot-beautiful-butterfly-with-interesting-textures-orange-petaled-flower_181624-7640.jpg",
+      "image" : "https://tse4.mm.bing.net/th/id/OIP.L13DaS2ouVljCXARxAGFtwHaHa?cb=defcachec2&w=626&h=626&rs=1&pid=ImgDetMain&o=7&rm=3",
       "title" : "Bamboo Spa",
       "sub_title" : ["LED Facial", "Oxygen Facial"],
       "date" : "1770028596000",
-      "credit" : 0
+      "credit" : 0,
+      "status": "booked"
     },
     {
       "id":"2",
-      "image" : "https://img.freepik.com/free-photo/vibrant-autumn-maple-leaves-nature-beauty-showcased-generated-by-ai_188544-15039.jpg",
-      "title" : "",
+      "image" : "https://tse4.mm.bing.net/th/id/OIP.L13DaS2ouVljCXARxAGFtwHaHa?cb=defcachec2&w=626&h=626&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "title" : "Bamboo Spa",
       "sub_title" : ["Hair Cut", "Facial", "Oxygen", "Facial"],
       "date" : "1738492596000",
-      "credit" : 5
+      "credit" : 5,
+      "status": "booked"
     },
     {
       "id":"3",
-      "image" : "https://img.freepik.com/free-photo/closeup-shot-butterfly-with-black-wings-red-white-stripes-resting-yellow-flower_181624-4381.jpg",
-      "title" : "",
+      "image" : "https://tse4.mm.bing.net/th/id/OIP.L13DaS2ouVljCXARxAGFtwHaHa?cb=defcachec2&w=626&h=626&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "title" : "Bamboo Spa",
       "sub_title" : ["Hair Cut"],
       "date" : "1770028596000",
-      "credit" : 3
+      "credit" : 3,
+      "status": "booked"
     }
   ],
   "past" : [
     {
       "id":"1",
-      "image" : "https://img.freepik.com/free-photo/closeup-shot-beautiful-butterfly-with-interesting-textures-orange-petaled-flower_181624-7640.jpg",
+      "image" : "https://tse4.mm.bing.net/th/id/OIP.L13DaS2ouVljCXARxAGFtwHaHa?cb=defcachec2&w=626&h=626&rs=1&pid=ImgDetMain&o=7&rm=3",
       "title" : "Bamboo Spa",
       "sub_title" : ["Hair Cut", "Facial", "Oxygen", "Facial","LED Facial", "Oxygen Facial"],
       "date" : "1770028596000",
-      "credit" : 1
+      "credit" : 1,
+      "status": "completed"
     },
     {
       "id":"2",
-      "image" : "https://img.freepik.com/free-photo/vibrant-autumn-maple-leaves-nature-beauty-showcased-generated-by-ai_188544-15039.jpg",
-      "title" : "",
+      "image" : "https://tse4.mm.bing.net/th/id/OIP.L13DaS2ouVljCXARxAGFtwHaHa?cb=defcachec2&w=626&h=626&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "title" : "Bamboo Spa",
       "sub_title" : ["LED Facial", "Oxygen Facial"],
       "date" : "1738492596000",
-      "credit" : 3
+      "credit" : 3,
+      "status": "cancelled"
     },
     {
       "id":"3",
-      "image" : "https://img.freepik.com/free-photo/closeup-shot-butterfly-with-black-wings-red-white-stripes-resting-yellow-flower_181624-4381.jpg",
-      "title" : "",
+      "image" : "https://tse4.mm.bing.net/th/id/OIP.L13DaS2ouVljCXARxAGFtwHaHa?cb=defcachec2&w=626&h=626&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "title" : "Bamboo Spa",
       "sub_title" : ["Facial"],
       "date" : "1770028596000",
-      "credit" : 4
+      "credit" : 4,
+      "status": "missed"
     }
   ]
 }

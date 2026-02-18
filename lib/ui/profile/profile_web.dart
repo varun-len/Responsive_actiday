@@ -1,4 +1,5 @@
 import 'package:actiday/ui/Login/login.dart';
+import 'package:actiday/ui/util/app_constants.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -16,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
         child: SizedBox(
           height: 70,
           width: 300,
-          child: Text("Logout "),
+          child: Text(str_Logout),
         ),
       ),
     );

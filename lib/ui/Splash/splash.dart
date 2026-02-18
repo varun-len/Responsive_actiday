@@ -1,8 +1,11 @@
 import 'dart:async';
+import 'package:actiday/framework/controller/booking_detail_controller/booking_detail_controller.dart';
 import 'package:actiday/ui/util/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../framework/controller/booking_page_controller/booking_page_controller.dart';
+import '../../framework/controller/home_page_controlller/home_page_conroller.dart';
 import '../Login/login.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -14,8 +17,11 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  void initState() {
+  void initState(){
     super.initState();
+    loadHomeJson();
+    BookingPageController().loadBookingJson();
+    BookingDetailController().loadBookingDetailJson();
     time();
   }
 

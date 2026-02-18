@@ -1,15 +1,15 @@
-import 'package:actiday/framework/controller/favourite_controller/favourite_controller.dart';
 import 'package:actiday/framework/controller/home_page_controlller/home_page_conroller.dart';
 import 'package:actiday/ui/util/Themes/app_colors.dart';
 import 'package:actiday/ui/util/top_class_card.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart' hide Banner;
 import 'package:flutter/services.dart';
-import '../../../framework/repository/base_bottom_navbar/models/home_model.dart';
 import '../../util/app_constants.dart';
 import '../../util/category_card.dart';
 import '../../util/common_search_bar.dart';
-import '../../util/custom_appbar.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../../util/custom_text.dart';
 
 class HomepageMobile extends StatefulWidget {
   const HomepageMobile({super.key});
@@ -19,22 +19,19 @@ class HomepageMobile extends StatefulWidget {
 }
 
 class _HomepageMobileState extends State<HomepageMobile> {
-  @override
-  void initState() {
-    super.initState();
-    loadHomeJson().then((_){
-      if(mounted)setState(() {
 
-      });
-    });
-  }
-
+  final CarouselSliderController _controller = CarouselSliderController();
+  int activeIndex=0;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery
         .of(context)
         .size
         .height;
+    double width= MediaQuery
+        .of(context)
+        .size
+        .width;
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,14 +63,59 @@ class _HomepageMobileState extends State<HomepageMobile> {
                     .width,
 
 
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: modelBanner.length,
-                    shrinkWrap: true,
-                    itemBuilder: (context, index) {
-                      return Image.network(
-                        modelBanner[index].image ?? '', fit: BoxFit.fill,);
-                    })
+                child: Column(
+                  children: [
+                  CarouselSlider.builder(
+                  carouselController: _controller,
+                  itemCount: modelBanner.length,
+                  itemBuilder: (context, index, realIndex) {
+                    final banner =modelBanner[index];
+                    return Stack(
+                      children: [
+                        SizedBox(
+                          height: MediaQuery.of(context).size.width / 3,
+                          child: Image.network(
+                            modelBanner[index].image ?? '',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Positioned(
+                          top: 20,
+                          left: 20,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              CustomText(
+                                text: str_beFit,
+                                fontSize: width * 0.07,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              CustomText(
+                                text:
+                                str_carouselSubtitle,
+                                fontSize: width * 0.022,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                  options: CarouselOptions(
+                    height: 120,
+                    autoPlay: true,
+                    enlargeCenterPage: true,
+                    viewportFraction: 0.9,
+                    onPageChanged: (index, reason) {
+
+                      setState(() => activeIndex = index);
+                    },),), const SizedBox(height: 12), AnimatedSmoothIndicator(
+                  activeIndex: activeIndex,
+                  count: modelBanner.length,
+                  effect: ExpandingDotsEffect(
+                    dotHeight: 4, dotWidth: 4, activeDotColor: Colors.blue,),
+                  onDotClicked: (index) => _controller.animateToPage(index),),
+                ],)
             ),
           ),
           Padding(
@@ -131,7 +173,7 @@ class _HomepageMobileState extends State<HomepageMobile> {
                       title: category.categoryName ?? '',
                       heightFactor: 8,
                       widthFactor: 2.29);
-                      },
+                },
               ),
             ),
           ),
@@ -167,12 +209,13 @@ class _HomepageMobileState extends State<HomepageMobile> {
                   );
                 },
                 itemBuilder: (context, index) {
-                  return TopClassCard(image: modelTopClass[index].image ?? '',
-                      index: index,
-                      title: modelTopClass[index].title ?? '',
-                      rating: modelTopClass[index].rating?.toDouble() ?? 0.0,
-                      subTitle: modelTopClass[index].subTitle ?? '',
-                      address: modelTopClass[index].address ?? '',
+                  return TopClassCard(
+                    image: modelTopClass[index].image ?? '',
+                    index: index,
+                    title: modelTopClass[index].title ?? '',
+                    rating: modelTopClass[index].rating?.toDouble() ?? 0.0,
+                    subTitle: modelTopClass[index].subTitle ?? '',
+                    address: modelTopClass[index].address ?? '',
 
                   );
                 }),

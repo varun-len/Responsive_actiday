@@ -1,0 +1,72 @@
+{
+  "upcoming": [
+    {
+      "image": "assets/images/ic_booking_detail.png",
+      "rating": 4.5,
+      "category": "Nail . Massage",
+      "time": 20,
+      "specialist": "Jenny Batcher",
+      "time-slot": "11:30 AM",
+      "bookingId": "#12345",
+      "address": "Arabian Gulf St",
+      "distance": 2
+    },
+    {
+      "image": "assets/images/ic_booking_detail.png",
+      "rating": 4.5,
+      "category": "Nail . Massage",
+      "time": 20,
+      "specialist": "Jenny Batcher",
+      "time-slot": "11:30 AM",
+      "bookingId": "#12345",
+      "address": "Gujrat",
+      "distance": 2
+    },
+    {
+      "image": "assets/images/ic_booking_detail.png",
+      "rating": 4.5,
+      "category": "Nail . Massage",
+      "time": 20,
+      "specialist": "Jenny Batcher",
+      "time-slot": "11:30 AM",
+      "bookingId": "#12345",
+      "address": "Pune",
+      "distance": 2
+    }
+  ],
+  "past": [
+    {
+      "image": "assets/images/ic_booking_detail.png",
+      "rating": 4.5,
+      "category": "Nail . Massage",
+      "time": 20,
+      "specialist": "Jenny Batcher",
+      "time-slot": "11:30 AM",
+      "bookingId": "#12345",
+      "address": "Arabian Gulf St",
+      "distance": 2
+    },
+    {
+      "image": "assets/images/ic_booking_detail.png",
+      "rating": 4.5,
+      "category": "Nail . Massage",
+      "time": 20,
+      "specialist": "Jenny Batcher",
+      "time-slot": "11:30 AM",
+      "bookingId": "#12345",
+      "address": "Arabian Gulf St",
+      "distance": 2
+    },
+    {
+      "image": "assets/images/ic_booking_detail.png",
+      "rating": 4.5,
+      "category": "Nail . Massage",
+      "time": 20,
+      "specialist": "Jenny Batcher",
+      "time-slot": "11:30 AM",
+      "bookingId": "#12345",
+      "address": "Arabian Gulf St",
+      "distance": 2
+    }
+  ]
+}

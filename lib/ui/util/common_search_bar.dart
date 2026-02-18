@@ -1,3 +1,5 @@
+import 'package:actiday/ui/util/Themes/app_colors.dart';
+import 'package:actiday/ui/util/app_constants.dart';
 import 'package:flutter/material.dart';
 
 class SearchBarDemo extends StatelessWidget {
@@ -17,7 +19,7 @@ class SearchBarDemo extends StatelessWidget {
           SizedBox(width: 8),
           Expanded(
             child: Text(
-              "yoga, pilates, massage",
+              str_searchString,
               style: TextStyle(color: Colors.grey[700], fontSize: 12),
             ),
           ),
@@ -25,7 +27,7 @@ class SearchBarDemo extends StatelessWidget {
             onTap: () {
               // Clear action
             },
-            child: Icon(Icons.close, color: Colors.grey[700]),
+            child: Icon(Icons.close, color: clrGrey),
           ),
         ],
       ),
