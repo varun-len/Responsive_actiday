@@ -15,10 +15,7 @@ class BookingInfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (width>height)?Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 100.0),
-      child: bookingcardlayout(index, status),
-    ):bookingcardlayout(index, status);
+    return (width>height)?bookingcardlayout(index, status):bookingcardlayout(index, status);
 }
 
 

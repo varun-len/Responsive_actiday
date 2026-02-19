@@ -14,10 +14,7 @@ class PaymentSummaryCards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (width>height)? Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 100.0),
-      child: containerLayout(status, index),
-    ): containerLayout(status, index);
+    return (width>height)? containerLayout(status, index): containerLayout(status, index);
   }
 }
 

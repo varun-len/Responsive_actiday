@@ -17,10 +17,7 @@ class StackCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (width>height)?Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 100.0),
-      child: stackCardSkeletonWeb(width, height, title, isUpcoming, index, status),
-    ):stackCardSkeletonMobile(width, height, title, isUpcoming, index, status);
+    return (width>height)?stackCardSkeletonWeb(width, height, title, isUpcoming, index, status):stackCardSkeletonMobile(width, height, title, isUpcoming, index, status);
 
 
   }

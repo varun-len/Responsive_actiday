@@ -87,7 +87,7 @@ class _BookingpageWebState extends State<BookingpageWeb> {
                         height: height,
                         isUpcoming: isUpcoming,
                         isPast: isPast,
-                        text: str_Past,
+                        text: str_Upcoming,
                         color: isUpcoming ? Colors.pinkAccent : Colors.grey,
                       ),
                     ),
