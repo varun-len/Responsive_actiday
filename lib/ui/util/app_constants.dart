@@ -32,15 +32,15 @@ String str_No="No";
 
 //images paths
 
-String ic_carousel_image="assets/images/carousel_images/carousel_image1.png";
-String ic_card_image1="assets/images/card_image1.png";
-String ic_card_image2="assets/images/card_image2.png";
-String ic_logoblack="assets/svg/ic_logoblack.svg";
-String ic_searchIcon="assets/svg/ic_search.svg";
+String ic_carousel_image="assets/images/carousel_images/ic_carousel_image1.png";
+String ic_card_image1="assets/images/ic_card_image1.png";
+String ic_card_image2="assets/images/ic_card_image2.png";
+String ic_logoblack="assets/svg/svg_logoblack.svg";
+String ic_searchIcon="assets/svg/svg_search.svg";
 String ic_appbarComponent="assets/images/ic_appbar_component.png";
-String ic_notification="assets/svg/ic_notification.svg";
-String ic_ratingStar="assets/svg/ic_star.svg";
-String imgSplash="assets/svg/ic_splash.svg";
-String jsonBooking='assets/json/booking.json';
-String jsonDetailBooking='assets/json/booking_detail.json';
-String jsonHome='assets/json/home.json';
+String ic_notification="assets/svg/svg_notification.svg";
+String ic_ratingStar="assets/svg/svg_star.svg";
+String imgSplash="assets/svg/svg_splash.svg";
+String jsonBooking='assets/json/booking_json.json';
+String jsonDetailBooking='assets/json/booking_detail_json.json';
+String jsonHome='assets/json/home_json.json';

@@ -1,5 +1,3 @@
-import 'package:actiday/ui/booking/mobile/bookingpage_mobile.dart';
-import 'package:actiday/ui/booking/web/bookingpage_web.dart';
 import 'package:actiday/ui/bookingdetails/web/booking_detail_web.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';

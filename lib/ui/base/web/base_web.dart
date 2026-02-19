@@ -1,6 +1,6 @@
 import 'package:actiday/ui/profile/profile_web.dart';
-import 'package:actiday/ui/util/custom_text.dart';
-import 'package:actiday/ui/util/logout_dialog.dart';
+import 'package:actiday/ui/util/widgets/custom_text.dart';
+import 'package:actiday/ui/util/widgets/logout_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

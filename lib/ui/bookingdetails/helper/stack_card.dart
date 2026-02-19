@@ -1,10 +1,10 @@
+import 'package:actiday/framework/controller/booking_detail_controller/booking_detail_controller.dart';
+import 'package:actiday/framework/controller/booking_page_controller/booking_page_controller.dart';
+import 'package:actiday/ui/util/Themes/app_colors.dart';
+import 'package:actiday/ui/util/app_constants.dart';
+import 'package:actiday/ui/util/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
-import '../../../framework/controller/booking_detail_controller/booking_detail_controller.dart';
-import '../../../framework/controller/booking_page_controller/booking_page_controller.dart';
-import '../../util/Themes/app_colors.dart';
-import '../../util/app_constants.dart';
-import '../../util/custom_text.dart';
 
 class StackCard extends StatelessWidget {
   final String status;
@@ -229,15 +229,7 @@ Widget stackCardSkeletonWeb(double width,double height,String title ,bool isUpco
                                     border: BoxBorder.all(color: clrPinkAccent),
                                   ),
                                   child: CustomText(
-                                    text: (isUpcoming)
-                                        ? BookingPageController
-                                        .modelUpcoming[index]
-                                        .status ??
-                                        ''
-                                        : BookingPageController
-                                        .modelPast[index]
-                                        .status ??
-                                        '',
+                                    text: status,
                                     fontSize: 17,
                                     align: TextAlign.center,
                                   ),

@@ -1,7 +1,8 @@
+import 'package:actiday/ui/util/Themes/app_colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../util/Themes/app_colors.dart';
-import '../../util/custom_text.dart';
+import '../../util/widgets/custom_text.dart';
+
 
 class StatusButtons extends StatelessWidget {
   final String status;
@@ -9,7 +10,7 @@ class StatusButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (status=="Booked")?isBooked():isCompleted();
+    return (status=="booked")?isBooked():isCompleted();
   }
 }
 

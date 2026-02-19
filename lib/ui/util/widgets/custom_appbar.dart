@@ -1,5 +1,4 @@
 import 'package:actiday/framework/controller/base_bottom_navbar/bottom_navbar_controller.dart';
-import 'package:actiday/framework/controller/booking_page_controller/booking_page_controller.dart';
 import 'package:actiday/ui/util/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

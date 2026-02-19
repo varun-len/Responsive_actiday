@@ -1,17 +1,13 @@
+
 import 'package:actiday/framework/controller/base_bottom_navbar/bottom_navbar_controller.dart';
 import 'package:actiday/framework/controller/booking_page_controller/booking_page_controller.dart';
 import 'package:actiday/ui/booking/Helper/tab_card_helper.dart';
+import 'package:actiday/ui/bookingdetails/booking_detail_base.dart';
 import 'package:actiday/ui/util/app_constants.dart';
-import 'package:actiday/ui/util/booking_card.dart';
-import 'package:actiday/ui/util/bottomnavbar/bottom_nav_bar_web.dart';
-import 'package:actiday/ui/util/custom_appbar.dart';
-import 'package:actiday/ui/util/custom_text.dart';
+import 'package:actiday/ui/util/widgets/booking_card.dart';
+import 'package:actiday/ui/util/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../../bookingdetails/mobile/booking_detail_mobile.dart';
-import '../Helper/past_cards.dart';
-import '../Helper/upcoming_crds.dart';
 
 class BookingpageWeb extends StatefulWidget {
   const BookingpageWeb({super.key});
@@ -79,6 +75,8 @@ class _BookingpageWebState extends State<BookingpageWeb> {
                           isPast = false;
                           isUpcoming = true;
                         }
+                        print("isUpcoming:$isUpcoming");
+                        print("isPast:$isPast");
 
                         setState(() {});
                       },
@@ -99,6 +97,8 @@ class _BookingpageWebState extends State<BookingpageWeb> {
                           isUpcoming = false;
                         }
                         setState(() {});
+                        print("isUpcoming:$isUpcoming");
+                        print("isPast:$isPast");
                       },
                       child: TabCardHelper(
                         width: width,
@@ -125,9 +125,24 @@ class _BookingpageWebState extends State<BookingpageWeb> {
                 itemCount: BookingPageController.modelUpcoming.length,
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
-                  return (isUpcoming)
-                      ? upcomingCards(index, isUpcoming,context)
-                      : pastCards(index, isPast);
+                  return InkWell(
+                    onTap: (){
+
+                      print(BookingPageController.modelUpcoming[index].status);
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>BookingDetailScreen(title: BookingPageController.modelUpcoming[index].title ?? '', status:BookingPageController.modelUpcoming[index].status??'',isUpcoming:isUpcoming,index:index,)));
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: BookingCard(
+                        index: index,
+                        image: (isUpcoming)?BookingPageController.modelUpcoming[index].image ?? '':BookingPageController.modelPast[index].image ?? '',
+                        title: (isUpcoming)?BookingPageController.modelUpcoming[index].title ?? '':BookingPageController.modelPast[index].title ?? '',
+                        credit: (isUpcoming)?BookingPageController.modelUpcoming[index].credit?.toDouble() ?? 0.0:BookingPageController.modelPast[index].credit?.toDouble()??0.0,
+                        status: (isUpcoming)?BookingPageController.modelUpcoming[index].status:BookingPageController.modelPast[index].status,
+                      ),
+                    ),
+                  );
+
                 },
               ),
             ),

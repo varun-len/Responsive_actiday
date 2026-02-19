@@ -1,9 +1,8 @@
+import 'package:actiday/framework/controller/base_bottom_navbar/bottom_navbar_controller.dart';
+import 'package:actiday/ui/util/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../../framework/controller/base_bottom_navbar/bottom_navbar_controller.dart';
-import 'Themes/app_colors.dart';
-import 'app_constants.dart';
+import '../themes/app_colors.dart';
 import 'custom_text.dart';
 import 'logout_dialog.dart';
 

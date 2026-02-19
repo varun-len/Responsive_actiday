@@ -1,14 +1,9 @@
-import 'package:actiday/framework/controller/base_bottom_navbar/bottom_navbar_controller.dart';
-import 'package:actiday/framework/controller/booking_detail_controller/booking_detail_controller.dart';
-import 'package:actiday/framework/controller/booking_page_controller/booking_page_controller.dart';
 import 'package:actiday/ui/bookingdetails/helper/booking_info_card.dart';
 import 'package:actiday/ui/bookingdetails/helper/payment_summary_cards.dart';
 import 'package:actiday/ui/bookingdetails/helper/stack_card.dart';
 import 'package:actiday/ui/util/Themes/app_colors.dart';
-import 'package:actiday/ui/util/app_constants.dart';
-import 'package:actiday/ui/util/custom_text.dart';
+import 'package:actiday/ui/util/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class BookingDetailMobile extends StatefulWidget {
   final int index;

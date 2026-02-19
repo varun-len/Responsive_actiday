@@ -3,8 +3,8 @@ import 'package:actiday/framework/controller/home_page_controlller/home_page_con
 import 'package:actiday/ui/util/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'Themes/app_colors.dart';
-import 'custom_text.dart'; // assuming you already created CustomText
+import '../themes/app_colors.dart';
+import 'custom_text.dart';
 
 class TopClassCard extends StatefulWidget {
   final int index;
@@ -83,14 +83,14 @@ class _TopClassCardState extends State<TopClassCard> {
                   child: Center(
                     child: IconButton(
                       onPressed: (){
-                        if(modelTopClass[widget.index].isFavourite!){
+                        if(HomePageController.modelTopClass[widget.index].isFavourite!){
                           FavouriteController.favourite.remove(widget.index);
                         }
                         else{
                           FavouriteController.favourite.add(widget.index);
                           print(FavouriteController.favourite);
                         }
-                        modelTopClass[widget.index].isFavourite=! modelTopClass[widget.index].isFavourite!;
+                        HomePageController.modelTopClass[widget.index].isFavourite=! HomePageController.modelTopClass[widget.index].isFavourite!;
                         setState(() {
 
                         });
@@ -99,7 +99,7 @@ class _TopClassCardState extends State<TopClassCard> {
                       icon:Icon(
                         Icons.favorite,
                         size: 18,
-                        color: (modelTopClass[widget.index].isFavourite!)?Colors.red:Colors.black,
+                        color: (HomePageController.modelTopClass[widget.index].isFavourite!)?Colors.red:Colors.black45,
                       ),
                     ),
                   ),

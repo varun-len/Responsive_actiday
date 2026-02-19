@@ -3,13 +3,13 @@ import 'package:actiday/ui/dashboard/home.dart';
 import 'package:actiday/ui/explore/explore.dart';
 import 'package:actiday/ui/favourite/favourite.dart';
 import 'package:actiday/ui/util/app_constants.dart';
-import 'package:actiday/ui/util/custom_appbar.dart';
-import 'package:actiday/ui/util/custom_text.dart';
+import 'package:actiday/ui/util/widgets/custom_appbar.dart';
+import 'package:actiday/ui/util/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import '../../../framework/controller/base_bottom_navbar/bottom_navbar_controller.dart';
 import '../../Login/login.dart';
 import '../../util/Themes/app_colors.dart';
-import '../../util/logout_dialog.dart';
+import '../../util/widgets/logout_dialog.dart';
 
 class BaseMobile extends StatefulWidget {
   const BaseMobile({super.key});

@@ -1,13 +1,14 @@
+import 'package:actiday/framework/controller/booking_page_controller/booking_page_controller.dart';
+import 'package:actiday/ui/bookingdetails/booking_detail_base.dart';
+import 'package:actiday/ui/util/widgets/booking_card.dart';
 import 'package:flutter/material.dart';
-
-import '../../../framework/controller/booking_page_controller/booking_page_controller.dart';
-import '../../util/app_constants.dart';
-import '../../util/booking_card.dart';
-
-Widget pastCards(int index, bool isPast) {
+Widget pastCards(int index, bool isPast,BuildContext context) {
   return InkWell(
     onTap: (){
-
+      onTap: (){
+        print(BookingPageController.modelPast[index].status);
+        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>BookingDetailScreen(title: BookingPageController.modelPast[index].title ?? '', status:BookingPageController.modelPast[index].status??'',isUpcoming:true,index:index,)));
+      };
     },
     child: Padding(
       padding: const EdgeInsets.all(8.0),
@@ -16,7 +17,7 @@ Widget pastCards(int index, bool isPast) {
         image: BookingPageController.modelPast[index].image ?? '',
         title: BookingPageController.modelPast[index].title ?? '',
         credit: BookingPageController.modelPast[index].credit?.toDouble() ?? 0.0,
-        status: str_Past,
+        status:BookingPageController.modelPast[index].status,
       ),
     ),
   );

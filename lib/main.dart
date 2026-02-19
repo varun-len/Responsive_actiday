@@ -1,5 +1,5 @@
+
 import 'package:actiday/ui/Splash/splash.dart';
-import 'package:actiday/ui/base/base.dart';
 import 'package:flutter/material.dart';
 
 void main() {

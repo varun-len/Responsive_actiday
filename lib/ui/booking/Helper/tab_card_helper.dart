@@ -1,6 +1,6 @@
+import 'package:actiday/ui/util/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
-import '../../util/custom_text.dart';
 
 class TabCardHelper extends StatefulWidget {
   final double width;

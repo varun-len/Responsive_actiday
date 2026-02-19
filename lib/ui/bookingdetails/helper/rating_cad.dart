@@ -1,12 +1,14 @@
+import 'package:actiday/ui/util/Themes/app_colors.dart';
+import 'package:actiday/ui/util/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
-import '../../util/Themes/app_colors.dart';
-import '../../util/custom_text.dart';
 
 class RatingCard extends StatelessWidget {
   final String text;
   final String rating;
-  const RatingCard({super.key, required this.text, required this.rating});
+  final int colorRatingIndex;
+  final int index;
+  const RatingCard({super.key, required this.text, required this.rating, required this.colorRatingIndex, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class RatingCard extends StatelessWidget {
         Container(
           height: 30,
           width: 60,
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(13),border: BoxBorder.all(color: clrPinkAccent)),
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(13),border:BoxBorder.all(color: (index<colorRatingIndex)?clrPinkAccent:clrBlack45)),
           child: Padding(
             padding: const EdgeInsets.all(2.0),
             child: Row(

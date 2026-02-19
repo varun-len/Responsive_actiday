@@ -1,8 +1,8 @@
+import 'package:actiday/framework/controller/booking_page_controller/booking_page_controller.dart';
+import 'package:actiday/ui/util/app_constants.dart';
+import 'package:actiday/ui/util/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
-import '../../../framework/controller/booking_page_controller/booking_page_controller.dart';
-import '../../util/app_constants.dart';
-import '../../util/custom_text.dart';
 
 class PaymentSummaryCards extends StatelessWidget {
   final String status;

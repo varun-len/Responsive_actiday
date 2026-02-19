@@ -1,20 +1,17 @@
-import 'package:actiday/ui/base/base.dart';
+
+import 'package:actiday/framework/controller/base_bottom_navbar/bottom_navbar_controller.dart';
 import 'package:actiday/ui/base/web/base_web.dart';
 import 'package:actiday/ui/bookingdetails/helper/booking_info_card.dart';
 import 'package:actiday/ui/bookingdetails/helper/payment_summary_cards.dart';
-import 'package:actiday/ui/bookingdetails/helper/rating_cad.dart';
 import 'package:actiday/ui/bookingdetails/helper/stack_card.dart';
 import 'package:actiday/ui/bookingdetails/helper/status_buttons.dart';
 import 'package:actiday/ui/util/Themes/app_colors.dart';
-import 'package:actiday/ui/util/custom_appbar.dart';
-import 'package:actiday/ui/util/custom_text.dart';
+import 'package:actiday/ui/util/app_constants.dart';
+import 'package:actiday/ui/util/widgets/custom_text.dart';
+import 'package:actiday/ui/util/widgets/logout_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../framework/controller/base_bottom_navbar/bottom_navbar_controller.dart';
-import '../../util/app_constants.dart';
-import '../../util/common_appbar_web.dart';
-import '../../util/logout_dialog.dart';
 
 class BookingDetailWeb extends StatefulWidget {
   final int index;
@@ -36,7 +33,14 @@ class BookingDetailWeb extends StatefulWidget {
 
 class _BookingDetailWebState extends State<BookingDetailWeb> {
   int index = BottomController.selectedIndex;
-  List<String?> ratingList = ['Bad', 'Better', 'Good', 'very Good', 'Excellent'];
+  int colorIndexRating = 0;
+  List<String?> ratingList = [
+    'Bad',
+    'Better',
+    'Good',
+    'very Good',
+    'Excellent',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -219,47 +223,93 @@ class _BookingDetailWebState extends State<BookingDetailWeb> {
                     ),
                   ),
                   SizedBox(width: 30),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: width / 4,
-                        height: height / 2,
-                        decoration: BoxDecoration(
-                          color: clrWhite,
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: clrGreyShade300,
-                              blurRadius: 1,
-                              spreadRadius: 0.6,
-                            ),
-                          ],
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(18.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              CustomText(text: "Rate Us"),
-                              SizedBox(height: 10),
-                              ListView.builder(
-                                itemCount:ratingList.length,
-                                shrinkWrap: true,
-                                itemBuilder: (context, index) => Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                                  child: RatingCard(
-                                    text: "${index + 1}",
-                                    rating: "${ratingList[index]}",
-                                  ),
-                                ),
+                  Visibility(
+                    visible: (widget.status=='completed'),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: width / 4,
+                          height: height / 2,
+                          decoration: BoxDecoration(
+                            color: clrWhite,
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                color: clrGreyShade300,
+                                blurRadius: 1,
+                                spreadRadius: 0.6,
                               ),
                             ],
                           ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(18.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                CustomText(text: "Rate Us"),
+                                SizedBox(height: 10),
+                                ListView.builder(
+                                  itemCount: ratingList.length,
+                                  shrinkWrap: true,
+                                  itemBuilder: (context, index) => Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      vertical: 8.0,
+                                    ),
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        colorIndexRating = index;
+                                        setState(() {});
+                                      },
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            height: 30,
+                                            width: 60,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(13),
+                                              border: BoxBorder.all(
+                                                color:
+                                                    (index <= colorIndexRating)
+                                                    ? clrPinkAccent
+                                                    : clrBlack45,
+                                              ),
+                                            ),
+                                            child: Padding(
+                                              padding: const EdgeInsets.all(
+                                                2.0,
+                                              ),
+                                              child: Row(
+                                                children: [
+                                                  SizedBox(width: 10),
+                                                  Center(
+                                                    child: CustomText(
+                                                      text: "${index + 1}",
+                                                    ),
+                                                  ),
+                                                  Icon(
+                                                    Icons.star_border,
+                                                    size: 19,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(width: 10),
+                                          Text(ratingList[index] ?? ''),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
-                      ),
-                      SizedBox(height: height - (height / 2)),
-                    ],
+                        SizedBox(height: height - (height / 2)),
+                      ],
+                    ),
                   ),
                 ],
               ),

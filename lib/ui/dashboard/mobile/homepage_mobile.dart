@@ -1,15 +1,15 @@
 import 'package:actiday/framework/controller/home_page_controlller/home_page_conroller.dart';
 import 'package:actiday/ui/util/Themes/app_colors.dart';
-import 'package:actiday/ui/util/top_class_card.dart';
+import 'package:actiday/ui/util/app_constants.dart';
+import 'package:actiday/ui/util/widgets/category_card.dart';
+import 'package:actiday/ui/util/widgets/common_search_bar.dart';
+import 'package:actiday/ui/util/widgets/custom_text.dart';
+import 'package:actiday/ui/util/widgets/top_class_card.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart' hide Banner;
 import 'package:flutter/services.dart';
-import '../../util/app_constants.dart';
-import '../../util/category_card.dart';
-import '../../util/common_search_bar.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../util/custom_text.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomepageMobile extends StatefulWidget {
   const HomepageMobile({super.key});
@@ -67,15 +67,15 @@ class _HomepageMobileState extends State<HomepageMobile> {
                   children: [
                   CarouselSlider.builder(
                   carouselController: _controller,
-                  itemCount: modelBanner.length,
+                  itemCount: HomePageController.modelBanner.length,
                   itemBuilder: (context, index, realIndex) {
-                    final banner =modelBanner[index];
+                    final banner =HomePageController.modelBanner[index];
                     return Stack(
                       children: [
                         SizedBox(
                           height: MediaQuery.of(context).size.width / 3,
                           child: Image.network(
-                            modelBanner[index].image ?? '',
+                            HomePageController.modelBanner[index].image ?? '',
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -111,7 +111,7 @@ class _HomepageMobileState extends State<HomepageMobile> {
                       setState(() => activeIndex = index);
                     },),), const SizedBox(height: 12), AnimatedSmoothIndicator(
                   activeIndex: activeIndex,
-                  count: modelBanner.length,
+                  count: HomePageController.modelBanner.length,
                   effect: ExpandingDotsEffect(
                     dotHeight: 4, dotWidth: 4, activeDotColor: Colors.blue,),
                   onDotClicked: (index) => _controller.animateToPage(index),),
@@ -166,9 +166,9 @@ class _HomepageMobileState extends State<HomepageMobile> {
                   return SizedBox(width: 20);
                 },
                 scrollDirection: Axis.horizontal,
-                itemCount: modelCategory.length,
+                itemCount: HomePageController.modelCategory.length,
                 itemBuilder: (context, index) {
-                  final category = modelCategory[index];
+                  final category = HomePageController.modelCategory[index];
                   return CategoryCard(image: category.image ?? '',
                       title: category.categoryName ?? '',
                       heightFactor: 8,
@@ -200,7 +200,7 @@ class _HomepageMobileState extends State<HomepageMobile> {
           ),
           Padding(
             padding: const EdgeInsets.all(12.0),
-            child: ListView.separated(itemCount: modelTopClass.length,
+            child: ListView.separated(itemCount: HomePageController.modelTopClass.length,
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 separatorBuilder: (context, index) {
@@ -210,12 +210,12 @@ class _HomepageMobileState extends State<HomepageMobile> {
                 },
                 itemBuilder: (context, index) {
                   return TopClassCard(
-                    image: modelTopClass[index].image ?? '',
+                    image: HomePageController.modelTopClass[index].image ?? '',
                     index: index,
-                    title: modelTopClass[index].title ?? '',
-                    rating: modelTopClass[index].rating?.toDouble() ?? 0.0,
-                    subTitle: modelTopClass[index].subTitle ?? '',
-                    address: modelTopClass[index].address ?? '',
+                    title: HomePageController.modelTopClass[index].title ?? '',
+                    rating: HomePageController.modelTopClass[index].rating?.toDouble() ?? 0.0,
+                    subTitle: HomePageController.modelTopClass[index].subTitle ?? '',
+                    address: HomePageController.modelTopClass[index].address ?? '',
 
                   );
                 }),

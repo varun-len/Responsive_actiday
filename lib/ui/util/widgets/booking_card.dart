@@ -1,11 +1,9 @@
 import 'package:actiday/framework/controller/booking_page_controller/booking_page_controller.dart';
-import 'package:actiday/framework/controller/favourite_controller/favourite_controller.dart';
-import 'package:actiday/framework/controller/home_page_controlller/home_page_conroller.dart';
+import 'package:actiday/ui/bookingdetails/booking_detail_base.dart';
 import 'package:actiday/ui/util/Themes/app_colors.dart';
-import 'package:actiday/ui/util/app_constants.dart';
 import 'package:flutter/material.dart';
-import '../bookingdetails/booking_detail_base.dart';
-import 'custom_text.dart'; // assuming you already created CustomText
+
+import 'custom_text.dart';
 
 class BookingCard extends StatefulWidget {
   final int index;
@@ -45,7 +43,7 @@ class _BookingCardState extends State<BookingCard> {
 
     return GestureDetector(
       onTap: (){
-        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>BookingDetailScreen(title:widget.title,status:BookingPageController.modelUpcoming[widget.index].status ?? "", isUpcoming:(BookingPageController.modelUpcoming[widget.index].status==str_Upcoming), index:widget.index,)));
+        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>BookingDetailScreen(title:widget.title,status:widget.status??'', index:widget.index, isUpcoming: widget.isPast??true)));
       },
       child: Container(
         height:  width > height ? width /2.5 : width/1.3,
@@ -134,7 +132,7 @@ class _BookingCardState extends State<BookingCard> {
                   decoration: BoxDecoration(border:BoxBorder.all(color:Colors.green),borderRadius: BorderRadius.circular(20)),
                   child: Padding(
                     padding: const EdgeInsets.all(2.0),
-                    child: Center(child: CustomText(text:(widget.status==str_Upcoming)?BookingPageController.modelUpcoming[widget.index].status??'':BookingPageController.modelPast[widget.index].status??'',color:clrPinkAccent,fontSize:width>height?width*0.009:width*0.035,)),
+                    child: Center(child: CustomText(text:widget.status??'',color:clrPinkAccent,fontSize:width>height?width*0.009:width*0.035,)),
                   ),
                 ),
                 const SizedBox(width: 10),

@@ -1,17 +1,15 @@
-import 'package:actiday/framework/controller/favourite_controller/favourite_controller.dart';
+import 'package:actiday/framework/controller/home_page_controlller/home_page_conroller.dart';
 import 'package:actiday/ui/util/Themes/app_colors.dart';
 import 'package:actiday/ui/util/app_constants.dart';
-import 'package:actiday/ui/util/bottomnavbar/bottom_nav_bar_web.dart';
-import 'package:actiday/ui/util/custom_text.dart';
-import 'package:actiday/ui/util/top_class_card.dart';
+import 'package:actiday/ui/util/widgets/bottom_nav_bar_web.dart';
+import 'package:actiday/ui/util/widgets/category_card.dart';
+import 'package:actiday/ui/util/widgets/custom_text.dart';
+import 'package:actiday/ui/util/widgets/top_class_card.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart' hide Banner;
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../../framework/controller/home_page_controlller/home_page_conroller.dart';
-import '../../util/category_card.dart';
 
 class HomepageWeb extends StatefulWidget {
   const HomepageWeb({super.key});
@@ -24,7 +22,7 @@ class _HomepageWebState extends State<HomepageWeb> {
   @override
   void initState() {
     super.initState();
-    loadHomeJson().then((_){
+    HomePageController().loadHomeJson().then((_){
       if(mounted)setState(() {});
     });
   }
@@ -48,43 +46,50 @@ class _HomepageWebState extends State<HomepageWeb> {
                     children: [
                       CarouselSlider.builder(
                         carouselController: _controller,
-                        itemCount: modelBanner.length,
+                        itemCount: HomePageController.modelBanner.length,
                         itemBuilder: (context, index, realIndex) {
-                          final banner =modelBanner[index];
+                          final banner =HomePageController.modelBanner[index];
                           return Stack(
                             children: [
-                              SizedBox(
-                                height: MediaQuery.of(context).size.width / 3,
+                              Container(
+                                height: MediaQuery.of(context).size.width / 2.5,
                                 width: MediaQuery.of(context).size.width ,
-                                child: Image.network(
-                                  modelBanner[index].image ?? '',
+                                clipBehavior: Clip.antiAlias,
+                                decoration:BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                                child: Image.asset(
+                                  "assets/images/ic_carousel.png",
                                   fit: BoxFit.cover,
                                 ),
                               ),
-                              Positioned(
-                                top: 20,
-                                left: 20,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    CustomText(
-                                      text: str_beFit,
-                                      fontSize: width * 0.023,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                    CustomText(
-                                      text:
-                                      str_carouselSubtitle,
-                                      fontSize: width * 0.012,
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              // Positioned(
+                              //   top: 20,
+                              //   left: 20,
+                              //   child: Column(
+                              //     crossAxisAlignment: CrossAxisAlignment.start,
+                              //     children: [
+                              //       CustomText(
+                              //         text: str_beFit,
+                              //         fontSize: width * 0.023,
+                              //         fontWeight: FontWeight.bold,
+                              //       ),
+                              //       CustomText(
+                              //         text:
+                              //         str_carouselSubtitle,
+                              //         fontSize: width * 0.012,
+                              //       ),
+                              //     ],
+                              //   ),
+                              // ),
+                              // Positioned(child: Container(
+                              //   height: 20,
+                              //   width: 70,
+                              //   child: Text("->"),
+                              // ))
                             ],
                           );
                         },
                         options: CarouselOptions(
-                          height: 120,
+                          height: 200,
                           autoPlay: true,
                           enlargeCenterPage: true,
                           viewportFraction: 0.9,
@@ -93,7 +98,7 @@ class _HomepageWebState extends State<HomepageWeb> {
                             setState(() => activeIndex = index);
                           },),), const SizedBox(height: 12), AnimatedSmoothIndicator(
                         activeIndex: activeIndex,
-                        count: modelBanner.length,
+                        count: HomePageController.modelBanner.length,
                         effect: ExpandingDotsEffect(
                           dotHeight: 4, dotWidth: 4, activeDotColor: Colors.blue,),
                         onDotClicked: (index) => _controller.animateToPage(index),),
@@ -139,9 +144,9 @@ class _HomepageWebState extends State<HomepageWeb> {
                         return SizedBox(width: 20);
                       },
                       scrollDirection: Axis.horizontal,
-                      itemCount: modelCategory.length,
+                      itemCount: HomePageController.modelCategory.length,
                       itemBuilder: (context, index) {
-                        final category = modelCategory[index];
+                        final category = HomePageController.modelCategory[index];
                         return CategoryCard(
                           image: category.image ?? '',
                           title: category.categoryName ?? '',
@@ -185,16 +190,16 @@ class _HomepageWebState extends State<HomepageWeb> {
                       mainAxisSpacing: 10,
                       childAspectRatio: 11 / 8,
                     ),
-                    itemCount: modelTopClass.length,
+                    itemCount: HomePageController.modelTopClass.length,
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
                       return TopClassCard(
                         index: index,
-                        image: modelTopClass[index].image ?? '',
-                        title: modelTopClass[index].title ?? '',
-                        rating: modelTopClass[index].rating?.toDouble() ?? 0.0,
-                        subTitle: modelTopClass[index].subTitle ?? '',
-                        address: modelTopClass[index].address ?? '',
+                        image:HomePageController.modelTopClass[index].image ?? '',
+                        title: HomePageController.modelTopClass[index].title ?? '',
+                        rating: HomePageController.modelTopClass[index].rating?.toDouble() ?? 0.0,
+                        subTitle: HomePageController.modelTopClass[index].subTitle ?? '',
+                        address: HomePageController.modelTopClass[index].address ?? '',
                       );
                     },
                   ),
