@@ -114,7 +114,13 @@ class _BookingCardState extends State<BookingCard> {
                 fontSize: width > height ? width * 0.011 : width * 0.039,
               ),
             ),
-
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Divider(
+                thickness: 2,
+                color: clrGreyShade300,
+              ),
+            ),
             Row(
               children: [
                 Padding(

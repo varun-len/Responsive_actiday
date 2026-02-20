@@ -1,6 +1,6 @@
 //common Strings used
 
-String str_home="home";
+String str_home="Home";
 String str_booking="Booking";
 String str_explore="Explore";
 String str_favourite="Favourite";

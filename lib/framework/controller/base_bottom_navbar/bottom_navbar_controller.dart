@@ -12,7 +12,7 @@ class BottomController {
   static int selectedIndex=0;
   static List<BottomModel> bottomList = [
     BottomModel(
-      name: EnumBase.home.name,
+      name: "Home",
       iconName: Icon(Icons.home),
       color: Colors.black,
       isSelected: true,

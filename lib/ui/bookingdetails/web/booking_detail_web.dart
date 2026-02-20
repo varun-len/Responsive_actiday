@@ -182,6 +182,7 @@ class _BookingDetailWebState extends State<BookingDetailWeb> {
               ),
               SizedBox(height: 20),
               Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(width: 100),
                   Container(
@@ -228,9 +229,12 @@ class _BookingDetailWebState extends State<BookingDetailWeb> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
+                        // Container(
+                        //   height: 140,
+                        // ),
                         Container(
                           width: width / 4,
-                          height: height / 2,
+                          height: height *0.6,
                           decoration: BoxDecoration(
                             color: clrWhite,
                             borderRadius: BorderRadius.circular(20),
@@ -291,13 +295,14 @@ class _BookingDetailWebState extends State<BookingDetailWeb> {
                                                   Icon(
                                                     Icons.star_border,
                                                     size: 19,
+                                                      color: (index<=colorIndexRating)?clrPinkAccent:clrBlack45
                                                   ),
                                                 ],
                                               ),
                                             ),
                                           ),
                                           SizedBox(width: 10),
-                                          Text(ratingList[index] ?? ''),
+                                          Text(ratingList[index] ?? '',style: TextStyle(color: (index<=colorIndexRating)?clrPinkAccent:clrBlack45),),
                                         ],
                                       ),
                                     ),

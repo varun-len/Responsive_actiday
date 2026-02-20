@@ -70,6 +70,7 @@ class _BaseWebState extends State<BaseWeb> {
               child: Image.asset(ic_appbarComponent),
             ),
           ),
+          SizedBox(width: 10),
           InkWell(
             onTap: () {
               showDialog(context: context, builder: (context){

@@ -75,7 +75,7 @@ class _BookingpageMobileState extends State<BookingpageMobile> {
               itemBuilder: (context,index){
             return Padding(
               padding: const EdgeInsets.all(8.0),
-              child: BookingCard(index: index, image: BookingPageController.modelUpcoming[index].image??'', title:BookingPageController.modelUpcoming[index].title??'', credit: BookingPageController.modelUpcoming[index].credit?.toDouble()??0.0),
+              child: BookingCard(index: index, image: BookingPageController.modelUpcoming[index].image??'', title:BookingPageController.modelUpcoming[index].title??'', credit: BookingPageController.modelUpcoming[index].credit?.toDouble()??0.0,status:(isUpcoming)?BookingPageController.modelUpcoming[index].status:BookingPageController.modelPast[index].status ,),
             );
           }),
         ),

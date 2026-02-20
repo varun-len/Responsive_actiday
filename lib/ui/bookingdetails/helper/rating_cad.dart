@@ -26,7 +26,7 @@ class RatingCard extends StatelessWidget {
                     width: 10,
                   ),
                   Center(child: CustomText(text: text)),
-                  Icon(Icons.star_border,size: 19,),]
+                  Icon(Icons.star_border,size: 19,color: (index<colorRatingIndex)?clrPinkAccent:clrBlack45),]
             ),
           ),
         ),
